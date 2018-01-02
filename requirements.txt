@@ -2,5 +2,4 @@ bokeh
 datetime
 gunicorn==19.3.0
 pandas
-python==2.7.14
 requests==2.9.1
