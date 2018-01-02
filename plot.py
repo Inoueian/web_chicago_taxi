@@ -6,7 +6,7 @@ from bokeh.embed import file_html
 
 def plot_ticker(ticker):
 
-    output_file('template/output.html', title='Bokeh Plot', mode='cdn', root_dir=None)
+    output_file('templates/output.html', title='Bokeh Plot', mode='cdn', root_dir=None)
 
     #set up dates
     now = datetime.datetime.now()
@@ -32,6 +32,7 @@ def plot_ticker(ticker):
     #plot using Bokeh
     p = figure(plot_width=600, plot_height=400, x_axis_type="datetime")
     p.circle(df.datetime, df.close, size=10)
+    show(p)
 
     return None
 
