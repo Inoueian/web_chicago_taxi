@@ -1,10 +1,31 @@
-from flask import Flask, render_template, request, redirect
+import requests, datetime, io
+import pandas as pd
+from bokeh.plotting import figure, output_file, show
 
-app = Flask(__name__)
+#set up dates
+now = datetime.datetime.now()
+#list of dates from 30 days ago to now
+date_list = [now - datetime.timedelta(30-i) for i in range(31)]
+#format for the API request
+dates = '%2C'.join([date.strftime('%Y-%m-%d') for date in date_list])
 
-@app.route('/')
-def index():
-  return render_template('index.html')
+#set up API request
+url = 'https://www.quandl.com/api/v3/datatables/WIKI/PRICES.csv?'
+payload = '&'.join(['ticker=A', 'date=' + dates, 'api_key=oju6mQfWvzQLmaah9cZU'])
 
-if __name__ == '__main__':
-  app.run(port=33507)
+#download data
+with requests.Session() as s:
+    download = s.get(url + payload)
+
+#pick out just the dates and closing prices
+df = pd.read_csv(io.BytesIO(download.content))[['date', 'close']]
+
+#For plotting purposes, parse the string dates as datetimes.
+df['datetime'] = df['date'].apply(lambda x: datetime.datetime.strptime(x, '%Y-%m-%d'))
+
+#plot using Bokeh
+p = figure(plot_width=600, plot_height=400, x_axis_type="datetime")
+
+p.circle(df.datetime, df.close, size=10)
+show(p)
+
