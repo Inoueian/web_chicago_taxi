@@ -1,4 +1,7 @@
-This is a version personalized by Satoru Inoue.
+This is a version personalized by Satoru Inoue. 2 issues currently.
+
+1. Heroku doesn't generate a webpage. I can run Flask locally.
+2. Flask runs, as in it displays input.html, and output.html, but the output page is not the new plot that is supposed to be generated when I run app.py.
 
 # Flask on Heroku
 
