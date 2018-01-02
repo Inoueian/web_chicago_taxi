@@ -1,6 +1,6 @@
 This is a version personalized by Satoru Inoue. 1 major issue currently.
 
-1. Flask runs, as in it displays input.html, and output.html, but the output page is not the new plot that is supposed to be generated when I run app.py.
+1. Flask runs, as in it displays input.html, and output.html, but the output page is not the new plot that is supposed to be generated when I run app.py. Running plot_ticker function in plot.py does generate a new plot.
 
 # Flask on Heroku
 
