@@ -17,7 +17,7 @@ def index():
 #        f.write('{ticker: \'%s\',}'%(app.vars['ticker']))
         f.close()
 
-        plot_ticker(app.vars['ticker'])
+#        plot_ticker(app.vars['ticker'])
         
         return render_template('output.html')
 
