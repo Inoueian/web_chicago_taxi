@@ -1,31 +1,37 @@
 import requests, datetime, io
 import pandas as pd
 from bokeh.plotting import figure, output_file, show
+from bokeh.resources import CDN
+from bokeh.embed import file_html
 
-#set up dates
-now = datetime.datetime.now()
-#list of dates from 30 days ago to now
-date_list = [now - datetime.timedelta(30-i) for i in range(31)]
-#format for the API request
-dates = '%2C'.join([date.strftime('%Y-%m-%d') for date in date_list])
+def plot_ticker(ticker):
 
-#set up API request
-url = 'https://www.quandl.com/api/v3/datatables/WIKI/PRICES.csv?'
-payload = '&'.join(['ticker=A', 'date=' + dates, 'api_key=oju6mQfWvzQLmaah9cZU'])
+    output_file('output.html', title='Bokeh Plot', mode='cdn', root_dir=None)
 
-#download data
-with requests.Session() as s:
-    download = s.get(url + payload)
+    #set up dates
+    now = datetime.datetime.now()
+    #list of dates from 30 days ago to now
+    date_list = [now - datetime.timedelta(30-i) for i in range(31)]
+    #format for the API request
+    dates = '%2C'.join([date.strftime('%Y-%m-%d') for date in date_list])
 
-#pick out just the dates and closing prices
-df = pd.read_csv(io.BytesIO(download.content))[['date', 'close']]
+    #set up API request
+    url = 'https://www.quandl.com/api/v3/datatables/WIKI/PRICES.csv?'
+    payload = '&'.join(['ticker=' + ticker, 'date=' + dates, 'api_key=oju6mQfWvzQLmaah9cZU'])
 
-#For plotting purposes, parse the string dates as datetimes.
-df['datetime'] = df['date'].apply(lambda x: datetime.datetime.strptime(x, '%Y-%m-%d'))
+    #download data
+    with requests.Session() as s:
+        download = s.get(url + payload)
 
-#plot using Bokeh
-p = figure(plot_width=600, plot_height=400, x_axis_type="datetime")
+    #pick out just the dates and closing prices
+    df = pd.read_csv(io.BytesIO(download.content))[['date', 'close']]
 
-p.circle(df.datetime, df.close, size=10)
-show(p)
+    #For plotting purposes, parse the string dates as datetimes.
+    df['datetime'] = df['date'].apply(lambda x: datetime.datetime.strptime(x, '%Y-%m-%d'))
+
+    #plot using Bokeh
+    p = figure(plot_width=600, plot_height=400, x_axis_type="datetime")
+    p.circle(df.datetime, df.close, size=10)
+
+    return None
 

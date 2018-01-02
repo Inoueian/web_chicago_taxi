@@ -1,0 +1,23 @@
+<!doctype html>
+<title>Plot stock price</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style.css')}}'>
+<div class=page>
+  <h1>Choose stock</h1>
+  <div class=metanav>
+
+    <h4>
+      Enter the code for the stock you want to look up.
+    </h4>
+
+    <form id='inputform' method='post' action='index' >
+      <p>
+    Code: <input type='text' name='ticker' />
+      </p>
+      <p>
+    <input type='submit' value='Submit' />
+      </p>
+    </form>
+
+  </div>
+</div>
+</html>
