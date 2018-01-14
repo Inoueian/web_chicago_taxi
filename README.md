@@ -1,4 +1,4 @@
-This is a version personalized by Satoru Inoue.
+This adapts the Flask on Heroku repo to create a website that displays graphics based on my Chicago taxi project.
 
 # Flask on Heroku
 
