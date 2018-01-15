@@ -1,4 +1,4 @@
-This adapts the Flask on Heroku repo to create a website that displays graphics based on my Chicago taxi project.
+This adapts the Flask on Heroku repo to create a website that displays graphics based on my Chicago taxi project. The web app created by Flask in the end should accept input from visitors (weather, day of week, etc.) and output a map of Chicago with the relevant traffic information.
 
 # Flask on Heroku
 
