@@ -1,4 +1,5 @@
 bokeh
+flask-bootstrap
 datetime
 flask
 gunicorn==19.3.0
