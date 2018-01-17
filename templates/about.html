@@ -7,5 +7,19 @@
     <div class="page-header">
 	<h1>About the Chicago taxi project</h1>
     </div>
+    <h2>Motivation</h2>
+    <h3>How can you reduce road congestion in Chicago?</h3>
+    <p>As in many large cities, the traffic in Chicago can be bad. At peak times on weekdays, many of the major streets in the city center are moving much more slowly than at non-peak times. Given the number of person-hours being lost, congestion is a considerable cause of economic losses. City planners (and road users!) would prefer that traffic flowed more freely.</p>
+    <h3>Tragedy of the commons</h3>
+    <p>One key insight from urban economics is that congestion is a tragedy of the commons problem. The street system is a communal resource, with often very small marginal cost for usage. This leads to congestion, which is an overuse of the resource, resulting in reduced utility of the resource for everyone.</p>
+    <h3>Congestion pricing</h3>
+    <p>This framing suggests an idea for reducing congestion: congestion pricing. Adding an extra car when the road is congested imposes costs on everyone else. What if this incurred a monetary fee? By reflecting the actual cost of using the roads on what people pay to use the roads, we can divert people from low-occupancy cars (car with just the driver, 1 person riding Uber, etc.) to car pools, buses and trains.</p>
+    <h2>Data and Analysis</h2>
+    <h3>Chicago taxi data</h3>
+    <p>I use the <a href="https://data.cityofchicago.org/Transportation/Taxi-Trips/wrvz-psew">Chicago taxi dataset</a> to use taxi trips as proxy for peak-time traffic. This set of data is collected by the City of Chicago, and contains information about pickup/dropoff times and locations, fares paid, among other miscellaneous information. In downtown areas, taxis and ride-hailing services like Uber and Lyft make up a large fraction of the traffic.</p>
+    <h3>Time and location information</h3>
+    <p>The relevant times for the investigation of congestion pricing are around 8-11AM and 4-8PM on weekdays. I focus for now on the possibility of introducing congestion pricing for the Loop, which is logistically favorable as it is separated from the Near North Side and Near West Side by the Chicago River, providing natural locations to collect tolls.</p>
+    <h3>Simulating traffic and estimating effects of congestion pricing</h3>
+    <p>Since we have fare information for the taxi rides, it is possible to estimate the effect of a toll on the total taxi traffic level, given a price elasticity. I will assume a value for the price elasticity, taken from urban economic research. In addition, I will perform simple machine learning analysis to simulate "typical" traffic patterns, given day of the week, weather, etc.</p>
 </div>
 {% endblock %}
