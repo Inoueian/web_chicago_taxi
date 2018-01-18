@@ -24,5 +24,11 @@ def about_me():
     """This page is about me"""
     return render_template('satoru.html')
 
+@app.route('/plot/')
+def plot():
+    """Displays plot. This should be in the main page,
+    but I haven't figured out how to embed Bokeh plots in a good way."""
+    return render_template('bokeh.html')
+
 if __name__ == '__main__':
     app.run()
