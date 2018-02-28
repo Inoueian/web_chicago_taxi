@@ -28,7 +28,7 @@ def about_me():
 def plot():
     """Displays plot. This should be in the main page,
     but I haven't figured out how to embed Bokeh plots in a good way."""
-    return render_template('bokeh.html')
+    return render_template('bokeh_test.html')
 
 if __name__ == '__main__':
     app.run()
