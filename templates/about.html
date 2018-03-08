@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Chicago taxi project{% endblock %}
+{% block title %}About the Chicago taxi project{% endblock %}
 
 {% block page_content %}
 <div class="container">
@@ -18,8 +18,8 @@
     <h3>Chicago taxi data</h3>
     <p>I use the <a href="https://data.cityofchicago.org/Transportation/Taxi-Trips/wrvz-psew">Chicago taxi dataset</a> to use taxi trips as proxy for peak-time traffic. This set of data is collected by the City of Chicago, and contains information about pickup/dropoff times and locations, fares paid, among other miscellaneous information. In downtown areas, taxis and ride-hailing services like Uber and Lyft make up a large fraction of the traffic.</p>
     <h3>Time and location information</h3>
-    <p>The relevant times for the investigation of congestion pricing are around 8-11AM and 4-8PM on weekdays. I focus for now on the possibility of introducing congestion pricing for the Loop, which is logistically favorable as it is separated from the Near North Side and Near West Side by the Chicago River, providing natural locations to collect tolls.</p>
+    <p>The relevant times for the investigation of congestion pricing are around 8-11AM and 4-8PM on weekdays. I focus for now on the possibility of introducing congestion pricing for the Loop, which is logistically favorable as it is separated from the Near North Side and Near West Side by the Chicago River, providing natural locations to collect tolls. While it may be tempting for city planners to introduce a fee at all times (more revenue), differention based on times of the day is important, as this would encourage people to shift their trips to different times of the day.</p>
     <h3>Simulating traffic and estimating effects of congestion pricing</h3>
-    <p>Since we have fare information for the taxi rides, it is possible to estimate the effect of a toll on the total taxi traffic level, given a price elasticity. I will assume a value for the price elasticity, taken from urban economic research. In addition, I will perform simple machine learning analysis to simulate "typical" traffic patterns, given day of the week, weather, etc. The website will display the amount of taxi traffic given conditions specified by the user, and show the effects of different levels of congestion fees.</p>
+    <p>Since we have fare information for the taxi rides, it is possible to estimate the effect of a toll on the total taxi traffic level, given a price elasticity. I performed a simple machine learning analysis to simulate "typical" traffic patterns, given day of the week, weather, etc. The <a href="/">home page</a> displays visualizations for how these traffic levels are affected at different levels of congestion fees.</p>
 </div>
 {% endblock %}

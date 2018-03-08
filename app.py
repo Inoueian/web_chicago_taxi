@@ -19,26 +19,31 @@ def about():
     """This introduces the project"""
     return render_template('about.html')
 
+@app.route('/analysis/')
+def analysis():
+    """This describes the analysis"""
+    return render_template('analysis.html')
+
 @app.route('/satoru/')
 def about_me():
     """This page is about me"""
     return render_template('satoru.html')
 
-@app.route('/line/')
-def line():
-    """Displays plot. This should be in the main page,
-    but I haven't figured out how to embed Bokeh plots in a good way."""
-    return render_template('bokeh_line.html')
+#@app.route('/line/')
+#def line():
+#    """Displays plot. This should be in the main page,
+#    but I haven't figured out how to embed Bokeh plots in a good way."""
+#    return render_template('bokeh_line.html')
 
-@app.route('/map/')
-def map():
-    """Displays plot. This should be in the main page,
-    but I haven't figured out how to embed Bokeh plots in a good way."""
-    return render_template('bokeh_map.html')
+#@app.route('/map/')
+#def map():
+#    """Displays plot. This should be in the main page,
+#    but I haven't figured out how to embed Bokeh plots in a good way."""
+#    return render_template('bokeh_map.html')
 
-@app.route('/test/')
-def test():
-    return render_template('test.html')
+#@app.route('/test/')
+#def test():
+#    return render_template('test.html')
 
 if __name__ == '__main__':
     app.run()
