@@ -30,16 +30,16 @@
 	<div class="bk-plotdiv" id="6d2e575c-8843-4c82-b3e2-d7db9a3b4244"></div>
     </div>
     <p>This plot shows the reduction in taxi traffic starting in the Loop around 6pm on weekdays ('from the Loop'), and taxi traffic ending in the Loop around 9am on weekdays ('to the Loop'). North, West, and South indicate that the taxi rides enter or leave the Loop in the corresponding direction. Loop indicates that the taxi start and end the trip inside the Loop. Total is the sum of the 4 amounts.</p>
-    <p>When there is a fee to enter or leave the Loop at peak hours, some travellers would either change their mode of transportation or change the time of their travel. The size of this effect is modeled by the price elasticity, which is defined here as (% change in traffic) / (% change in total cost). There are estimates of this quantity from the San Francisco Bay Area (Bay Bridge) and London, and values around -0.5 and -1.0 are reasonable. From congestion reduction point of view, a high price elasticity would be "optimistic" and a low elasticity is "pessimistic."</p>
+    <p>When there is a fee to enter or leave the Loop at peak hours, some travellers would either change their mode of transportation or change the time of their travel. The size of this effect is modeled by the price elasticity, which is defined here as (% change in traffic) / (% change in total cost). There are estimates of this quantity from the San Francisco Bay Area (Bay Bridge) and London, and values around -0.5 and -1.0 are reasonable. From congestion reduction point of view, a large absolute value for the price elasticity would be "optimistic" and a small absolute value is "pessimistic."</p>
     <p>Taxi trips within the Loop are not affected by the fee, but short trips that cross the border are affected the most, as the fee would represent a relatively large fraction of the cost.</p>
     <p>While the price elasticity is assumed to be a single number here, a more precise modeling would take into account the fact that different types of traffic have different elasticities, and that the elasticity changes based on the price. The model plotted here is expected to break down when the fee rises high enough, and I chose to plot for fees only up to $5.</p>
 
     <h3>How do destinations for taxi trips from/to the Loop change?</h3>
 
     <div class="bk-root">
-	<div class="bk-plotdiv" id="3f49e73c-0278-4384-b387-30bd19883b70"></div>
+	<div class="bk-plotdiv" id="dd42adc1-0d18-4ff8-b1e8-acdf6ebe2e6a"></div>
     </div>
-    <p>Assuming a price elasticity of 0.5, this map shows the change in taxi traffic to/from the Loop (as defined for the previous plot) as you change the fee from 0 to $5. Each segment in the map is a census tract.</p>
+    <p>Assuming a price elasticity of -0.5, this map shows the change in taxi traffic to/from the Loop (as defined for the previous plot) as you change the fee from 0 to $5. Each segment in the map is a census tract.</p>
     <p>Again, the taxi trips within the Loop are not affected, but relatively short trips connecting the Loop to nearby areas are reduced. Hovering the mouse over a census tract shows the estimated hourly number of taxi trips to/from the Loop at peak times.</p>
 </body>
 
