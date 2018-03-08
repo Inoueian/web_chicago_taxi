@@ -24,11 +24,21 @@ def about_me():
     """This page is about me"""
     return render_template('satoru.html')
 
-@app.route('/plot/')
-def plot():
+@app.route('/line/')
+def line():
     """Displays plot. This should be in the main page,
     but I haven't figured out how to embed Bokeh plots in a good way."""
-    return render_template('bokeh_test.html')
+    return render_template('bokeh_line.html')
+
+@app.route('/map/')
+def map():
+    """Displays plot. This should be in the main page,
+    but I haven't figured out how to embed Bokeh plots in a good way."""
+    return render_template('bokeh_map.html')
+
+@app.route('/test/')
+def test():
+    return render_template('test.html')
 
 if __name__ == '__main__':
     app.run()
