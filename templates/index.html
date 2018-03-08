@@ -8,28 +8,38 @@
     <link
     href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.css"
     rel="stylesheet" type="text/css">
-        <link
+    <link
     href="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.13.min.css"
     rel="stylesheet" type="text/css">
-        <link
+    <link
     href="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.12.13.min.css"
     rel="stylesheet" type="text/css">
 
-        <script src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.js"></script>
-        <script src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.13.min.js"></script>
-        <script src="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.12.13.min.js"></script>
+    <script src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.13.min.js"></script>
+    <script src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.13.min.js"></script>
+    <script src="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.12.13.min.js"></script>
 
-        <script type="text/javascript" src="{{ url_for('static', filename='bokeh_line.js') }}"></script>
-        <script type="text/javascript" src="{{ url_for('static', filename='bokeh_map.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='bokeh_line.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='bokeh_map.js') }}"></script>
 </head>
 
 <body>
-	<div class="bk-root">
-	    <div class="bk-plotdiv" id="8f741b3a-2232-47e7-85fd-0e1595417e1d"></div>
-	</div>
-	<div class="bk-root">
-	    <div class="bk-plotdiv" id="3f49e73c-0278-4384-b387-30bd19883b70"></div>
-	</div>
+    <h3>How much is traffic reduced if there's a fee to enter/leave the Loop?
+    </h3>
+    <div class="bk-root">
+	<div class="bk-plotdiv" id="8f741b3a-2232-47e7-85fd-0e1595417e1d"></div>
+    </div>
+    <p>This plot shows the reduction in taxi traffic starting in the Loop around 6pm on weekdays ('from the Loop'), and taxi traffic ending in the Loop around 9am on weekdays ('to the Loop').</p>
+    <p>When there is a fee to enter or leave the Loop at peak hours, some travellers would either change their mode of transportation or change the time of their travel. The size of this effect is modeled by the price elasticity, which is defined here as (% change in traffic) / (% change in total cost). There are estimates of this quantity from the San Francisco Bay Area (Bay Bridge) and London, and values around 0.5 and 1 are reasonable.</p>
+    <p>Taxi trips within the Loop are not affected by the fee, but short trips that cross the border are affected the most, as the fee would represent a relatively large part of the cost.</p>
+
+    <h3>How do destinations for taxi trips from/to the Loop change?</h3>
+
+    <div class="bk-root">
+	<div class="bk-plotdiv" id="3f49e73c-0278-4384-b387-30bd19883b70"></div>
+    </div>
+    <p>Assuming a price elasticity of 0.5, this map shows the change in taxi traffic to/from the Loop (as defined for the previous plot) as you change the fee from 0 to $5. Each segment in the map is a census tract.</p>
+    <p>Again, the taxi trips within the Loop are not affected, but relatively short trips connecting the Loop to nearby areas are reduced. Hovering the mouse over a census tract shows the estimated hourly number of taxi trips to/from the Loop at peak times.</p>
 </body>
 
 {% endblock %}
